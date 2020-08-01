@@ -1,4 +1,4 @@
-//#include "test_runner.h"
+#include "test_runner.h"
 
 #include <iostream>
 #include <ostream>
@@ -91,34 +91,26 @@ private:
 };
 
 
-//void TestDeque() {
-//	Deque<int> a;
-//	ASSERT(a.Empty());
-//	a.PushBack(1);
-//	ASSERT(!a.Empty());
-//
-//	a.PushFront(2);
-//	ASSERT_EQUAL(2, a.Front());
-//	ASSERT_EQUAL(2, a[0]);
-//	ASSERT_EQUAL(1, a.Back());
-//}
+void TestDeque() {
+	Deque<int> a;
+	ASSERT(a.Empty());
+	a.PushBack(1);
+	ASSERT(!a.Empty());
+
+	a.PushFront(2);
+	ASSERT_EQUAL(2, a.Front());
+	ASSERT_EQUAL(2, a[0]);
+	ASSERT_EQUAL(1, a.Back());
+}
 
 
 void TestAll() {
-	//TestRunner tr;
-	//RUN_TEST(tr, TestDeque);
+	TestRunner tr;
+	RUN_TEST(tr, TestDeque);
 }
 
 
 int main() {
 	TestAll();
-	Deque<int> d1;
-	d1.PushFront(2);
-	d1.PushFront(1);
-	d1.PushBack(3);
-	d1.PushBack(4);
-	cout << d1[2] << endl;
-	cout << d1[3] << endl;
-	cout << d1[0] << endl;
-	cout << d1[1] << endl;
+	
 }
